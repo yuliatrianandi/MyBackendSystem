@@ -1,0 +1,17 @@
+{
+    "name": "yuliatrianandi/MyBackendSystem",
+    "description": "This is my backend system with MVC concepts using PHP and Bootsrap.",
+    "authors": [
+        {
+            "name": "Yulia Trianandi",
+            "email": "yuliatrianandi@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": ["config/config.php"]
+    }
+}
