@@ -8,8 +8,14 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Controllers\\HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'App\\Controllers\\ProductController' => $baseDir . '/app/controllers/ProductController.php',
+    'App\\Core\\AbstractDatabase' => $baseDir . '/app/core/AbstractDatabase.php',
+    'App\\Core\\AbstractModel' => $baseDir . '/app/core/AbstractModel.php',
     'App\\Core\\App' => $baseDir . '/app/core/App.php',
     'App\\Core\\Controller' => $baseDir . '/app/core/Controller.php',
-    'App\\Core\\Model' => $baseDir . '/app/core/Model.php',
+    'App\\Core\\DatabaseInterface' => $baseDir . '/app/core/DatabaseInterface.php',
+    'App\\Core\\Flasher' => $baseDir . '/app/core/Flasher.php',
+    'App\\Core\\ValidationRequest' => $baseDir . '/app/core/ValidationRequest.php',
+    'App\\Database\\Mysql' => $baseDir . '/app/database/Mysql.php',
+    'App\\Database\\Sqlite' => $baseDir . '/app/database/Sqlite.php',
     'App\\Models\\Product' => $baseDir . '/app/models/Product.php',
 );

@@ -4,7 +4,7 @@ namespace App\Core;
 
 class App
 {
-    protected $controller = 'HomeController';
+    protected $controller = '\App\\Controllers\\HomeController';
     protected $method = 'index';
     protected $params =[];
     private $url;
@@ -28,7 +28,7 @@ class App
         if (isset($_GET['url'])) {
             $url = $_GET['url'];
             $url = rtrim($url, '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = filter_var(strip_tags($url), \FILTER_SANITIZE_URL);
             $url = explode('/', $url);
             return $url;
         }
