@@ -51,4 +51,9 @@ class Product extends AbstractModel
     {
         return $this->database->delete($this->table, $id);
     }
+
+    public function search($keyword)
+    {
+        return $this->database->search($this->table, $keyword);
+    }
 }

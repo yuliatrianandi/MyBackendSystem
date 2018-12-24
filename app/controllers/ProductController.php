@@ -161,4 +161,24 @@ class ProductController extends Controller
         header('Location: ' . BASEURL . '/product/index');
         exit;
     }
+    
+    public function search()
+    {
+        $product = $this->model('Product');
+        $product->setDatabase(new Mysql);
+
+        if(isset($_POST['keyword'])){
+            $keyword = $_POST['keyword'];
+        }else{
+            Flasher::setFlash(['Failed! '], 'Empty keyword', 'danger');
+            header('Location: '.BASEURL.'/product/index');
+            exit;
+        }
+
+        $data['title'] = "All Product";
+        $data['keyword'] = $keyword;
+        $data['product'] = $product->search($keyword);
+        
+        return $this->view('product/index',$data);
+    }
 }

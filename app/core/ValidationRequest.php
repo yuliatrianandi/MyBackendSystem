@@ -6,17 +6,26 @@ class ValidationRequest
 {
     private $error = [];
 
+    /**
+     * input example
+     * $request = ['name' => 'trianandi'], $options = ['name' => 'required|min:20']
+     * running valueValidate('name', 'required|min:20', 'trianandi')
+     */ 
     public function __construct($request = [], $options = [])
     {
         foreach ($options as $key => $value) {
             if(isset($request[$key])) {
-                $this->valueValidate($request[$key], $key, $value);
+                $this->valueValidate($key, $value, $request[$key]);
             } else {
-                $this->valueValidate('', $key, $value);
+                $this->valueValidate($key, $value, '');
             }
         }
     }
-    public function valueValidate($singleRequest = null, $key, $options)
+
+    /**
+     * Explode options value and running method with params if set
+     */
+    public function valueValidate($key, $options, $singleRequest = null)
     {
         $options = explode('|', $options);
         foreach ($options as $option) {
@@ -70,16 +79,7 @@ class ValidationRequest
             array_push($this->error, "Error!! The " . $key . " field may only contain alpha-numeric, dash, and space");
         }
     }
-
-    public function isValid()
-    {
-        if (empty($this->error)) {
-            echo "true";
-        } else {
-            echo "false";
-        }
-    }
-
+    
     public function getError()
     {
         return $this->error;
