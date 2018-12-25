@@ -54,6 +54,8 @@ class Product extends AbstractModel
 
     public function search($keyword)
     {
-        return $this->database->search($this->table, $keyword);
+        $column = ['name', 'description'];
+        $operator = 'OR';
+        return $this->database->search($this->table, $keyword, $column, $operator);
     }
 }

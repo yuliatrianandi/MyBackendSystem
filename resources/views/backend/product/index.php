@@ -35,6 +35,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
+                                <th scope="col">Description</th>
                                 <th scope="col">Price</th>
                                 <th scope="col" colspan="3" class="text-center">Setting</th>
                             </tr>
@@ -44,6 +45,7 @@
                                 <tr>
                                     <th scope="row"><?= $product['id'] ?></th>
                                     <td><?= $product['name'] ?></td>
+                                    <td><?= $product['description'] ?></td>
                                     <td>Rp. <?php echo number_format($product['price'],2,',','.'); ?></td>
                                     <td><a href="<?= BASEURL ?>/product/show/<?= $product['id'] ?>" class="btn btn-primary btn-sm btn-block">Details</a></td>
                                     <td><a href="<?= BASEURL ?>/product/edit/<?= $product['id'] ?>" class="btn btn-success btn-sm btn-block">Edit</a></td>

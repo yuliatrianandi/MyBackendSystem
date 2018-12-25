@@ -117,9 +117,19 @@ class Mysql extends AbstractDatabase implements DatabaseInterface
         }
     }
 
-    public function search($table, $keyword)
+    public function search($table, $keyword, $column = [], $operator = 'OR')
     {
-        $query = "SELECT * FROM " . $table . " WHERE name LIKE :keyword";
+        $query = "SELECT * FROM " . $table . " WHERE ";
+        $index = 0;
+        foreach ($column as $value) {
+            if ($index == 0) {
+                $query = $query . $value . " LIKE :keyword";
+            } else {
+                $query = $query . ' ' . $operator . ' ' . $value . " LIKE :keyword";
+            }
+            $index += 1;
+        }
+        echo $query;
         $this->query($query);
         $this->bind(':keyword', "%$keyword%");
         $this->execute();
