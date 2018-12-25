@@ -27,15 +27,16 @@ class ComposerStaticInit3ddb5e218a594d92b502e7e7ef12992a
     public static $classMap = array (
         'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/controllers/HomeController.php',
         'App\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/controllers/ProductController.php',
-        'App\\Core\\AbstractDatabase' => __DIR__ . '/../..' . '/app/core/AbstractDatabase.php',
-        'App\\Core\\AbstractModel' => __DIR__ . '/../..' . '/app/core/AbstractModel.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/app/core/App.php',
         'App\\Core\\Controller' => __DIR__ . '/../..' . '/app/core/Controller.php',
-        'App\\Core\\DatabaseInterface' => __DIR__ . '/../..' . '/app/core/DatabaseInterface.php',
         'App\\Core\\Flasher' => __DIR__ . '/../..' . '/app/core/Flasher.php',
         'App\\Core\\ValidationRequest' => __DIR__ . '/../..' . '/app/core/ValidationRequest.php',
+        'App\\Database\\AbstractDatabase' => __DIR__ . '/../..' . '/app/database/AbstractDatabase.php',
+        'App\\Database\\DatabaseInterface' => __DIR__ . '/../..' . '/app/database/DatabaseInterface.php',
         'App\\Database\\Mysql' => __DIR__ . '/../..' . '/app/database/Mysql.php',
         'App\\Database\\Sqlite' => __DIR__ . '/../..' . '/app/database/Sqlite.php',
+        'App\\Models\\AbstractModel' => __DIR__ . '/../..' . '/app/models/AbstractModel.php',
+        'App\\Models\\Category' => __DIR__ . '/../..' . '/app/models/Category.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/models/Product.php',
     );
 

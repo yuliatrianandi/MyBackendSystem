@@ -2,8 +2,8 @@
 
 namespace App\Database;
 
-use App\Core\AbstractDatabase;
-use App\Core\DatabaseInterface;
+use App\Database\AbstractDatabase;
+use App\Database\DatabaseInterface;
 
 use \PDO;
 

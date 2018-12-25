@@ -2,8 +2,8 @@
 
 namespace App\Database;
 
-use App\core\AbstractDatabase;
-use App\core\DatabaseInterface;
+use App\Database\AbstractDatabase;
+use App\Database\DatabaseInterface;
 
 class Sqlite extends AbstractDatabase implements DatabaseInterface
 {

@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Models;
 use App\Database\Mysql;
 use \App\Core\Flasher;
 

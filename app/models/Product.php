@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use App\Core\AbstractModel;
-use App\Core\DatabaseInterface;
+use App\Models\AbstractModel;
 
 class Product extends AbstractModel
 {

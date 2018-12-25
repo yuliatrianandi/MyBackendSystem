@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Core;
+namespace App\Models;
+
+use App\Database\DatabaseInterface;
 
 abstract class AbstractModel
 {
