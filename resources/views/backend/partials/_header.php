@@ -15,6 +15,7 @@
                 <div class="navbar-nav">
                     <a href="<?= BASEURL ?>/home/index" class="nav-item nav-link">Home</a>
                     <a href="<?= BASEURL ?>/product/index" class="nav-item nav-link">Product</a>
+                    <a href="<?= BASEURL ?>/category/index" class="nav-item nav-link">Category</a>
                 </div>
             </div>
         </div>

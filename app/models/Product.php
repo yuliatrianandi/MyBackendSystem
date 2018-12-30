@@ -16,39 +16,26 @@ class Product extends AbstractModel
         $this->setTable('products');
     }
 
-    public function read($id)
-    {
-        return $this->database->read($this->table, $id);
-    }
-
-    public function readAll()
-    {
-        return $this->database->readAll($this->table);
-    }
-
     //create if $id == null, update if $id has been set.
     //this function returning lastInsertId() for last created product.
     public function save()
     {
         if (is_null($this->id)) {
-            return $this->database->store($this->table, [
+            $data = [
                 'name' => $this->name,
                 'description' => $this->description,
                 'price' => $this->price
-                ]);
+            ];
+            return $this->database->store($this->table, $data);
         } else {
-            return $this->database->update($this->table, [
+            $data = [
                 'id' => $this->id,
                 'name' => $this->name,
                 'description' => $this->description,
                 'price' => $this->price
-                ]);
+            ];
+            return $this->update($this->table, $data);
         }
-    }
-
-    public function delete($id)
-    {
-        return $this->database->delete($this->table, $id);
     }
 
     public function search($keyword)

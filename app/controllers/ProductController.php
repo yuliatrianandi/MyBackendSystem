@@ -86,8 +86,12 @@ class ProductController extends Controller
     {
         $data['title'] = "Product Details";
         $product = $this->model('Product');
-        $product->setDatabase(new Mysql);
-        $data['product'] = $product->read($id);
+        $database = new Mysql;
+        $database->setWhere([
+            'id' => $id
+        ]);
+        $product->setDatabase($database);
+        $data['product'] = $product->read();
         return $this->view('product/show',$data);
     }
     
@@ -95,8 +99,12 @@ class ProductController extends Controller
     {
         $data['title'] = "Product Details";
         $product = $this->model('Product');
-        $product->setDatabase(new Mysql);
-        $data['product'] = $product->read($id);
+        $database = new Mysql;
+        $database->setWhere([
+            'id' => $id
+        ]);
+        $product->setDatabase($database);
+        $data['product'] = $product->read();
         return $this->view('product/edit',$data);
     }
 
@@ -149,10 +157,14 @@ class ProductController extends Controller
 
     public function delete($id)
     {
+        $database = new Mysql;
+        $database->setWhere([
+            'id' => $id
+        ]);
         $product = $this->model('Product');
-        $product->setDatabase(new Mysql);
+        $product->setDatabase($database);
 
-        if($product->delete($id)>0) {
+        if($product->delete()>0) {
             Flasher::setFlash(['Success !! '], 'Delete the Product', 'success');
         } else {
             Flasher::setFlash(['Failed !! '], 'Delete the Product', 'danger');

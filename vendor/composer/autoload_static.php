@@ -25,12 +25,14 @@ class ComposerStaticInit3ddb5e218a594d92b502e7e7ef12992a
     );
 
     public static $classMap = array (
+        'App\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/controllers/CategoryController.php',
         'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/controllers/HomeController.php',
         'App\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/controllers/ProductController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/app/core/App.php',
         'App\\Core\\Controller' => __DIR__ . '/../..' . '/app/core/Controller.php',
         'App\\Core\\Flasher' => __DIR__ . '/../..' . '/app/core/Flasher.php',
         'App\\Core\\ValidationRequest' => __DIR__ . '/../..' . '/app/core/ValidationRequest.php',
+        'App\\Core\\View' => __DIR__ . '/../..' . '/app/core/View.php',
         'App\\Database\\AbstractDatabase' => __DIR__ . '/../..' . '/app/database/AbstractDatabase.php',
         'App\\Database\\DatabaseInterface' => __DIR__ . '/../..' . '/app/database/DatabaseInterface.php',
         'App\\Database\\Mysql' => __DIR__ . '/../..' . '/app/database/Mysql.php',
