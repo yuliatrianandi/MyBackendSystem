@@ -29,16 +29,13 @@ class CategoryController extends Controller
         return $this->view("category/index", $data);
     }
 
-    public function create(){
-
+    public function create()
+    {
         $category = $this->model($this->modelName);
         $category->setDatabase(new Mysql);
 
         $data["title"] = "Create New " . $this->modelName;
         $data["category"]["tree"] = $category->getTree();
-        echo '<pre>';
-        print_r($data['category']['tree']);
-        echo '</pre>';
 
         return $this->view("category/create",$data);
     }
@@ -99,6 +96,7 @@ class CategoryController extends Controller
         $category = $this->model($this->modelName);
         $category->setDatabase(new Mysql);
         $data["category"] = $category->read($id);
+        $data["category"]["tree"] = $category->getTree();
         return $this->view("category/edit",$data);
     }
 
